@@ -1,7 +1,10 @@
+import UserTable from "@/components/user-table/UserTable"
 
 const Page = () => {
     return (
-      <div>page</div>
+      <div>
+        <UserTable/>
+      </div>
     )
   }
   

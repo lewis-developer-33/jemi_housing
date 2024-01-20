@@ -3,7 +3,7 @@ import { DataTable } from "./data-table"
 import axios from 'axios'
 
 
-export default async function DemoPage() {
+export default async function UserTable() {
   const data:UserT[] = await axios.get('/api/admin/all-tenants')
 
   return (
