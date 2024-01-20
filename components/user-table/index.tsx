@@ -143,25 +143,20 @@ export const columns: ColumnDef<UserT>[] = [
   },
 ]
 
-export function DataTableDemo() {
+interface DataTableProps<TData, TValue> {
+  columns: ColumnDef<TData, TValue>[]
+  data: TData[]
+}
+
+export function DataTableDemo<TData,TValue>({
+  columns,
+  data,
+}: DataTableProps<TData,TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
   const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
   const [rowSelection, setRowSelection] = React.useState({})
-  const [data,setData] = React.useState([])
-  React.useEffect(() => {
-    const fetchData = async () => {
-        await axios.get(`${url}api/admin/all-tenants`)
-        .then((res) => {
-          setData(res?.data?.data)
-          console.log(res.data)
-        })
-        .catch((err) => {
-          console.log(err)
-        })
-      }
-    fetchData()
-  },[])
+  
 
   const table = useReactTable({
     data,
