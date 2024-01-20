@@ -44,7 +44,7 @@ export async function seed() {
       name VARCHAR(255) NOT NULL,
       cover VARCHAR(255) NOT NULL,
       price VARCHAR(255) NOT NULL,
-      images TEXT[] NOT NULL,
+      images TEXT[],
       state VARCHAR DEFAULT 'VACANT' NOT NULL,
       type VARCHAR DEFAULT 'BEDSITTER' NOT NULL,
       tenant_id INTEGER REFERENCES users(id),
