@@ -1,4 +1,3 @@
-import { seed } from '@/lib/seed'
 import Header from '@/components/Header'
 import {Card} from '@/components/Card'
 
