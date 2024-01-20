@@ -1,6 +1,5 @@
 import '@/app/globals.css'
 import { Inter } from 'next/font/google'
-import { ClerkProvider } from '@clerk/nextjs'
 
 export const metadata = {
   metadataBase: new URL('https://postgres-drizzle.vercel.app'),
@@ -22,11 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <ClerkProvider>
+      
         <body className={inter.variable}>
           {children}
         </body>
-      </ClerkProvider>
+      
     </html>
   )
 }

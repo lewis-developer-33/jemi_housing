@@ -10,8 +10,13 @@ export default async function UserTable() {
   const [data,setData] = useState([])
   useEffect(() => {
     const fetchData = async () => {
-      await axios.get(`${url}api/admin/all-tenants`).then((res) => {
+      await axios.get(`${url}api/admin/all-tenants`)
+      .then((res) => {
         setData(res.data)
+        console.log(res.data)
+      })
+      .catch((err) => {
+        console.log(err)
       })
     }
     fetchData()
