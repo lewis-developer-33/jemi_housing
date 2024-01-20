@@ -1,6 +1,6 @@
 
 import Header from '@/components/Header'
-import Card from '@/components/Card'
+import {Card} from '@/components/Card'
 
 // export const runtime = 'edge'
 // export const dynamic = 'force-dynamic'

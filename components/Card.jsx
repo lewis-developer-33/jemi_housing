@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 
-const Card = () => {
+export const Card = () => {
     const [saved,setSaved] = useState(false)
   return (
     <div className='w-[390px] flex flex-col items-center shadow-md rounded-sm p-1'>
@@ -35,4 +35,25 @@ const Card = () => {
   )
 }
 
-export default Card
+const data = [
+    {
+        cover:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        price:8000,
+        name:'1',
+        description:'',
+        images:[
+            'https://plus.unsplash.com/premium_photo-1680300960892-bd11b59b469b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'https://images.unsplash.com/photo-1557868969-df9517e8df10?q=80&w=1585&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            
+        ]
+    }
+]
+
+export const CardList = () => {
+    return (
+        <div className='grid gap-4 grid-cols-1 sm:grid-cols-2'>
+
+        </div>
+    )
+}
+
