@@ -1,11 +1,12 @@
-
+import { seed } from '@/lib/seed'
 import Header from '@/components/Header'
 import {Card} from '@/components/Card'
 
 // export const runtime = 'edge'
 // export const dynamic = 'force-dynamic'
 
-export default function Home() {
+export default async function Home() {
+  await seed()
   return (
     <main className="max-w-[390px]">
       <Header/>
