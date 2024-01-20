@@ -33,7 +33,7 @@ export async function seed() {
       username VARCHAR(255) NOT NULL,
       email VARCHAR(255) UNIQUE NOT NULL,
       image VARCHAR(255) NOT NULL,
-      role "user_role" DEFAULT 'USER' NOT NULL,
+      role "role" DEFAULT 'USER' NOT NULL,
       "createdAt" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL
     );
   `)
