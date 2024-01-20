@@ -52,22 +52,15 @@ export async function seed() {
   `)
   console.log(`Created "users" table`)
 
-  const insertedUsers: User[] = await db
-    .insert(UsersTable)
-    .values(fakeUsers)
-    .returning()
-  console.log(`Seeded ${insertedUsers.length} users`)
-
   const insertedUnits: Unit[] = await db
     .insert(UnitsTable)
     .values(fakeUnits)
     .returning()
-  console.log(`Seeded ${insertedUsers.length} users`)
+  console.log(`Seeded ${insertedUnits.length} users`)
 
   return {
     createUserTable,
     createUnitTable,
-    insertedUsers,
     insertedUnits
   }
 }
