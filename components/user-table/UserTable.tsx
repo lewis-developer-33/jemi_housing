@@ -1,21 +1,10 @@
-import { Payment, columns } from "./columns"
+import { UserT, columns } from "./columns"
 import { DataTable } from "./data-table"
+import axios from 'axios'
 
-async function getData(): Promise<Payment[]> {
-  // Fetch data from your API here.
-  return [
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    // ...
-  ]
-}
 
 export default async function DemoPage() {
-  const data = await getData()
+  const data:UserT[] = await axios.get('/api/admin/all-tenants')
 
   return (
     <div className="container mx-auto py-10">
