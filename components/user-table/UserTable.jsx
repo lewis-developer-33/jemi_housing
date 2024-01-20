@@ -12,7 +12,7 @@ export default async function UserTable() {
     const fetchData = async () => {
       await axios.get(`${url}api/admin/all-tenants`)
       .then((res) => {
-        setData(res.data)
+        setData(res.data.data)
         console.log(res.data)
       })
       .catch((err) => {
