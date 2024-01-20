@@ -29,6 +29,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "lib/seed.ts"
-  ],
+, "components/user-table/UserTable.jsx"  ],
   "exclude": ["node_modules"]
 }
