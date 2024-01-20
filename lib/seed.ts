@@ -33,7 +33,7 @@ export async function seed() {
       username VARCHAR(255) NOT NULL,
       email VARCHAR(255) UNIQUE NOT NULL,
       image VARCHAR(255) NOT NULL,
-      role "role" DEFAULT 'USER' NOT NULL,
+      role VARCHAR(255) DEFAULT 'USER' NOT NULL,
       "createdAt" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL
     );
   `)
@@ -45,7 +45,7 @@ export async function seed() {
       cover VARCHAR(255) NOT NULL,
       price VARCHAR(255) NOT NULL,
       images TEXT[] NOT NULL,
-      state "state" DEFAULT 'VACANT' NOT NULL,
+      state VARCHAR DEFAULT 'VACANT' NOT NULL,
       tenantId INTEGER REFERENCES users(id),
       "createdAt" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL
     );
