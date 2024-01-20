@@ -1,14 +1,14 @@
 import { db } from '@/lib/drizzle'
-import {UsersTable,UnitsTable} from './drizzle'
+import {users,units} from './drizzle'
 
 
 export const allUsers = async () => {
     const results= await db.select({
-        id:UsersTable.id,
-        username:UsersTable.username,
-        email:UsersTable.email,
-        role:UsersTable.role
-    }).from(UnitsTable)
+        id:users.id,
+        username:users.username,
+        email:users.email,
+        role:users.role
+    }).from(users)
     
     return results
 }

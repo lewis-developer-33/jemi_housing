@@ -17,7 +17,7 @@ export const roleEnum = pgEnum('role',['ADMIN','USER'])
 export const stateEnum = pgEnum('state',['VACANT','OCCUPIED','BOOKED'])
 export const unitTypeEnum = pgEnum('type',['2 BEDROOM','1 BEDROOM','BEDSITTER','STUDIO'])
 
-export const UsersTable = pgTable(
+export const users = pgTable(
   'users',
   {
     id: serial('id').primaryKey(),
@@ -34,7 +34,7 @@ export const UsersTable = pgTable(
   }
 )
 
-export const UnitsTable = pgTable(
+export const units = pgTable(
   'units',
   {
     id: serial('id').primaryKey(),
@@ -44,7 +44,7 @@ export const UnitsTable = pgTable(
     images: text('images').array(),
     state: stateEnum('state').default('VACANT'),
     type:unitTypeEnum('type').default('BEDSITTER'),
-    tenantId: integer("tenant_id").references(() => UsersTable.id),
+    tenantId: integer("tenant_id").references(() => users.id),
     createdAt: timestamp('createdAt').defaultNow().notNull(),
   },
   (units) => {
@@ -56,11 +56,11 @@ export const UnitsTable = pgTable(
 
 
 
-export type User = InferSelectModel<typeof UsersTable>
-export type NewUser = InferInsertModel<typeof UsersTable>
+export type User = InferSelectModel<typeof users>
+export type NewUser = InferInsertModel<typeof users>
 
-export type Unit = InferSelectModel<typeof UnitsTable>
-export type NewUnit = InferInsertModel<typeof UnitsTable>
+export type Unit = InferSelectModel<typeof units>
+export type NewUnit = InferInsertModel<typeof units>
 
 // Connect to Vercel Postgres
 export const db = drizzle(sql)
