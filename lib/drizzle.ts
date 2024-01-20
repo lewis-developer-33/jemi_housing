@@ -44,7 +44,7 @@ export const UnitsTable = pgTable(
     images: text('images').array(),
     state: stateEnum('state').default('VACANT'),
     type:unitTypeEnum('type').default('BEDSITTER'),
-    tenantId: integer("tenantId").references(() => UsersTable.id),
+    tenantId: integer("tenant_id").references(() => UsersTable.id),
     createdAt: timestamp('createdAt').defaultNow().notNull(),
   },
   (units) => {

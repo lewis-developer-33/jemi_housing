@@ -47,7 +47,7 @@ export async function seed() {
       images TEXT[] NOT NULL,
       state VARCHAR DEFAULT 'VACANT' NOT NULL,
       type VARCHAR DEFAULT 'BEDSITTER' NOT NULL,
-      tenantId INTEGER REFERENCES users(id),
+      tenant_id INTEGER REFERENCES users(id),
       "createdAt" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL
     );
   `)
