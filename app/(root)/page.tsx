@@ -6,7 +6,7 @@ import {Card} from '@/components/Card'
 // export const dynamic = 'force-dynamic'
 
 export default async function Home() {
-  await seed()
+  
   return (
     <main className="max-w-[390px]">
       <Header/>
