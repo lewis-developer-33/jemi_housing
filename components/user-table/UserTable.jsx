@@ -17,6 +17,7 @@ export default async function UserTable() {
     fetchData()
   },[])
 
+  console.log(data)
 
   return (
     <div className="container mx-auto py-10">
