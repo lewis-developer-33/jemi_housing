@@ -1,5 +1,6 @@
 import UserTable from "@/components/user-table/UserTable"
 
+
 const Page = () => {
     return (
       <div>
