@@ -1,3 +1,4 @@
+'use client'
 import { DataTableDemo,columns } from '@/components/user-table'
 import {useQuery} from '@tanstack/react-query'
 import { url } from "@/lib/utils"
