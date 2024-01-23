@@ -7,7 +7,7 @@ const Page = async () => {
   console.log(users)
     return (
       <div>
-        {/* <DataTableDemo data={data} columns={columns}/> */}
+        <DataTableDemo data={users} columns={columns}/>
       </div>
     )
   }
