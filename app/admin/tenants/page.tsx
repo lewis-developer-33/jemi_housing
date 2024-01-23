@@ -1,22 +1,13 @@
-'use client'
 import { DataTableDemo,columns } from '@/components/user-table'
-import {useQuery} from '@tanstack/react-query'
-import { url } from "@/lib/utils"
+import {viewUsers} from '@/lib/actions'
 
-const Page = () => {
-  
-  const { isPending, error, data } = useQuery({
-    queryKey: ['tenants'],
-    queryFn: () =>
-      fetch(`${url}api/admin/all-tenants`).then((res) =>res.json()),
-  })
+const Page = async () => {
 
-  if (isPending) return 'Loading...'
-
-  if (error) return 'An error has occurred: ' + error.message
+  const users = await viewUsers()
+  console.log(users)
     return (
       <div>
-        <DataTableDemo data={data} columns={columns}/>
+        {/* <DataTableDemo data={data} columns={columns}/> */}
       </div>
     )
   }
