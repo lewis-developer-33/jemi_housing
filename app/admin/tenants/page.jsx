@@ -1,4 +1,4 @@
-import { DataTableDemo,columns } from '@/components/user-table'
+import { DataTableDemo,UserT,columns } from '@/components/user-table'
 import {viewUsers} from '@/lib/actions'
 
 const Page = async () => {
