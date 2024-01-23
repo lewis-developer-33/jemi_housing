@@ -29,11 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ClerkProvider>
-        <QueryClientProvider client={queryClient}>
+        
           <body className={inter.variable}>
             {children}
           </body>
-        </QueryClientProvider>
+        
       </ClerkProvider>
     </html>
   )
